@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "super-ai-team"
+version = "1.0.0"
+description = "超级AI团队"
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = { extras = ["all"], version = "^0.100" }
+redis = "^7.0"
+sqlalchemy = "^2.0"
+psycopg2-binary = "^2.9"
+pydantic = "^2.0"
+pydantic-settings = "^2.0"
+pytest = "^7.0"
+docker = "^6.0"
+prometheus-client = "^0.17"
+transformers = "^4.30"
+faiss-cpu = "^1.7"
+networkx = "^3.0"
+python-dotenv = "^1.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.0"
+isort = "^5.0"
+flake8 = "^6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
