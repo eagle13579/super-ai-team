@@ -10,7 +10,8 @@ htmlcov/
 # 虚拟环境
 venv/
 .venv/
-env/
+.env/
+.env
 
 # IDE 设置
 .claude/
