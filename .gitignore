@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -137,3 +138,28 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+=======
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 虚拟环境
+venv/
+.venv/
+.env/
+.env
+
+# IDE 设置
+.claude/
+.vscode/
+.idea/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+>>>>>>> 349f99034863490f447899ade31625a720c5cdb0
