@@ -1,0 +1,55 @@
+# 搜索相关意图模板
+
+intents:
+  - name: information_search
+    description: "信息搜索"
+    keywords: ["搜索", "查找", "查询", "获取"]
+    patterns:
+      - ".*搜索.*"
+      - ".*查找.*"
+      - ".*查询.*"
+    examples:
+      - "搜索Python的安装教程"
+      - "查找最新的AI技术"
+      - "查询北京天气"
+    entity_schema:
+      query: { type: string, required: true }
+      category: { type: string, required: false }
+    priority: 1
+    threshold: 0.6
+
+  - name: product_search
+    description: "产品搜索"
+    keywords: ["产品", "商品", "购买", "价格"]
+    patterns:
+      - ".*产品.*"
+      - ".*商品.*"
+      - ".*购买.*"
+      - ".*价格.*"
+    examples:
+      - "搜索最新的手机产品"
+      - "查找笔记本电脑的价格"
+      - "查询这款产品的详细信息"
+    entity_schema:
+      product_name: { type: string, required: true }
+      price_range: { type: string, required: false }
+    priority: 1
+    threshold: 0.65
+
+  - name: location_search
+    description: "位置搜索"
+    keywords: ["位置", "地址", "地图", "路线"]
+    patterns:
+      - ".*位置.*"
+      - ".*地址.*"
+      - ".*地图.*"
+      - ".*路线.*"
+    examples:
+      - "搜索附近的餐厅"
+      - "查找北京天安门的位置"
+      - "查询从家到公司的路线"
+    entity_schema:
+      location: { type: string, required: true }
+      type: { type: string, required: false }
+    priority: 1
+    threshold: 0.6
