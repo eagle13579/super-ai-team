@@ -1,0 +1,53 @@
+# 聊天相关意图模板
+
+intents:
+  - name: general_chat
+    description: "闲聊"
+    keywords: ["你好", "谢谢", "再见", "你好吗"]
+    patterns:
+      - "^(你好|您好|嗨|哈喽).*"
+      - ".*谢谢.*"
+      - ".*再见.*"
+      - ".*你好吗.*"
+    examples:
+      - "你好"
+      - "谢谢你的帮助"
+      - "再见"
+      - "你好吗？"
+    priority: 3
+    threshold: 0.5
+
+  - name: question_answering
+    description: "问答"
+    keywords: ["什么是", "怎么", "为什么", "如何"]
+    patterns:
+      - "^(什么是|怎么|为什么|如何).*"
+    examples:
+      - "什么是Python的装饰器？"
+      - "怎么实现单例模式？"
+      - "为什么需要类型提示？"
+      - "如何学习机器学习？"
+    entity_schema:
+      question: { type: string, required: true }
+      domain: { type: string, required: false }
+    priority: 2
+    threshold: 0.6
+
+  - name: task_assignment
+    description: "任务分配"
+    keywords: ["帮我", "请你", "能否", "可以"]
+    patterns:
+      - ".*帮我.*"
+      - ".*请你.*"
+      - ".*能否.*"
+      - ".*可以.*"
+    examples:
+      - "帮我写一个报告"
+      - "请你分析一下数据"
+      - "能否帮我查一下资料"
+      - "可以帮我设计一个方案吗？"
+    entity_schema:
+      task: { type: string, required: true }
+      deadline: { type: string, required: false }
+    priority: 1
+    threshold: 0.65

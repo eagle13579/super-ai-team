@@ -1,0 +1,47 @@
+# 代码相关意图模板
+
+intents:
+  - name: code_generation
+    description: "生成代码"
+    keywords: ["写代码", "生成", "实现", "创建"]
+    patterns:
+      - ".*写.*代码.*"
+      - ".*生成.*(函数|类|方法).*"
+      - ".*实现.*功能.*"
+    examples:
+      - "帮我写一个Python函数"
+      - "生成一个排序算法"
+      - "实现一个用户登录功能"
+    entity_schema:
+      language: { type: string, required: false }
+      function_name: { type: string, required: false }
+    priority: 1
+    threshold: 0.7
+
+  - name: code_review
+    description: "代码审查"
+    keywords: ["review", "检查", "优化", "改进"]
+    patterns:
+      - ".*review.*代码.*"
+      - ".*检查.*(代码|实现).*"
+      - ".*优化.*代码.*"
+    examples:
+      - "帮我review这段代码"
+      - "检查一下这个函数的问题"
+      - "优化一下这个实现"
+    priority: 1
+    threshold: 0.75
+
+  - name: code_explanation
+    description: "代码解释"
+    keywords: ["解释", "什么是", "如何工作", "原理"]
+    patterns:
+      - ".*解释.*代码.*"
+      - ".*什么是.*代码.*"
+      - ".*如何工作.*"
+    examples:
+      - "解释这段代码的工作原理"
+      - "什么是Python的装饰器？"
+      - "这个算法是如何工作的？"
+    priority: 2
+    threshold: 0.65

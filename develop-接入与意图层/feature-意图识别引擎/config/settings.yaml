@@ -1,0 +1,60 @@
+# 意图识别引擎全局配置
+# 参考 @reference/intent_engine.py 中的配置项
+
+# 引擎配置
+engine:
+  name: "intent_engine"
+  version: "1.0.0"
+  enable_cache: true
+  cache_ttl_seconds: 3600
+  enable_early_termination: true
+  early_termination_threshold: 0.85
+  max_processing_time_ms: 2000
+
+# 日志配置
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/intent_engine.log"
+
+# 策略配置
+strategies:
+  keyword:
+    enabled: true
+    priority: 1
+    threshold: 0.8
+    synonym_expansion: true
+  semantic:
+    enabled: true
+    priority: 2
+    threshold: 0.75
+    top_k: 5
+    embedding_model: "paraphrase-multilingual-MiniLM-L12-v2"
+  few_shot:
+    enabled: true
+    priority: 3
+    examples_per_intent: 3
+    max_tokens: 500
+    temperature: 0.1
+
+# 模板配置
+templates:
+  directory: "templates/intent"
+  file_pattern: "*.yaml"
+
+# 插件配置
+plugins:
+  directory: "src/plugins"
+  enabled: true
+  auto_load: true
+
+# 监控配置
+monitoring:
+  enabled: true
+  metrics_port: 8000
+  metrics_path: "/metrics"
+
+# 环境配置
+environment:
+  env: "development"
+  debug: true
